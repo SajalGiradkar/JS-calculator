@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Calculator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-color: aliceblue;
+        position: relative;
+    }
+
+    #calculator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        width: 45rem;
+        height: 60rem;
+        padding: 1rem;
+        margin: .5rem 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-auto-rows: 1fr;
+        border-radius: 30px;
+        border: 0px solid transparent;
+        box-shadow: -2.3rem -2.3rem 4.5rem #a6a6a6,
+            2.3rem 2.3rem 4. 5rem #ffffff;
+    }
+
+    #input {
+        margin: 3rem 1rem;
+        padding: 1rem;
+        height: 6rem;
+        font-size: 3rem;
+        text-align: right;
+        grid-column: 1/-1;
+        outline: none;
+        border: none;
+        box-shadow: inset -1.2rem -1.2rem 3rem #c3c3c3,
+            inset 1.2rem 1.2rem 3rem #fdfdfd;
+    }
+
+    #calculator button {
+        font-size: 2.5rem;
+        margin: 1rem;
+        background-color: white;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 2.7rem;
+        background: linear-gradient(315deg, #ededed, #ffffff);
+        box-shadow: -1.6rem -1.6rem 1.5rem #b1b1b1,
+            1.6rem 1.6rem 1.5rem #ffffff;
+    }
+
+    #calculator button:hover {
+        border-radius: 2.7rem;
+        background: #e0e0e0;
+        box-shadow: inset -1.2rem -1.2rem 1.5rem #b1b1b1,
+            inset 1.2rem 1.2rem 1.5rem #ffffff;
+
+    }
+
+    #calculate {
+        grid-column: 3/-1;
+    }
+
+    @media only screen and (max-width:500px) {
+        #calculator {
+            width: 30rem;
+            height: 45rem;
+        }
+
+        #calculator button {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media only screen and (min-width:499px) and (max-width:1300px) {
+        #calculator button {
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (max-height:650px) {
+        #calculator {
+            width: 27rem;
+            height: 40rem;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="calculator" id="calculator">
+            <input type="text" id="input" placeholder="0" />
+
+            <button onclick="Clear()">AC</button>
+            <button onclick="del()">DEL</button>
+
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display(7)">7</button>
+            <button onclick="display(8)">8</button>
+            <button onclick="display(9)">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display(4)">4</button>
+            <button onclick="display(5)">5</button>
+            <button onclick="display(6)">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display(1)">1</button>
+            <button onclick="display(2)">2</button>
+            <button onclick="display(3)">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display(0)">0</button>
+            <button onclick="display('.')">.</button>
+
+            <button id="calculate" onclick="Calculate()">=</button>
+        </div>
+    </div>
+    <script src="Script.js"></script>
+</body>
+
+</html>
